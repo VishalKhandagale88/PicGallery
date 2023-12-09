@@ -31,4 +31,5 @@ export class ContentBodyComponent implements OnInit {
     });
   }
 
+  // when hover on card this things going to happen
 }

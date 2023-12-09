@@ -1,7 +1,6 @@
 <app-search-bar (searchTextChange)="onSearched($event)"></app-search-bar>
 <div class="body-content">
-  <div *ngFor="let images of imagesData">
-  <h1>{{images.alt_description}}</h1>
-  <img class="images" width="250vh" height="300vh" [src]="images.urls.regular">
+  <div class="images-div" *ngFor="let images of imagesData">
+    <img class="images" width="250vh" height="300vh" [src]="images.urls.regular">
   </div>
 </div>

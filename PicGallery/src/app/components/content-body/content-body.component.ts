@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PictureService } from 'src/app/service/picture.service';
 
 @Component({
@@ -6,14 +6,22 @@ import { PictureService } from 'src/app/service/picture.service';
   templateUrl: './content-body.component.html',
   styleUrls: ['./content-body.component.css']
 })
-export class ContentBodyComponent {
+export class ContentBodyComponent implements OnInit {
   constructor(private pictureService:PictureService ){
 
   }
+  ngOnInit(): void {
+    this.pictureService.getAllIameges().subscribe(data=>{
+      this.imagesData = data;
+      console.log(data);
+    });
+  }
   searchedText:string="";
+  imagesData:any
   onSearched(searchValue:string){
     this.searchedText = searchValue;
-    this.getAllImages();
+    console.log("In on seach method");
+
   }
 
 

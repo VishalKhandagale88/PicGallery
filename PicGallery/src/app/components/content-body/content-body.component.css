@@ -8,9 +8,31 @@
 .images{
   border-radius: 5px;
 }
+.user-details{
+  position: relative;
+  height: 20px;
+  bottom: 80px;
+  left: 10px;
+}
 
-.images:hover{
-    -ms-transform: scale(1); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1);
+/* ----------------------------- */
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease; /* Smooth transition for filter property */
+}
+
+.images:hover {
+  filter: brightness(40%); /* Darken the back image on hover */
+}
+
+.user-details {
+  transition: opacity 0.4s ease; /* Smooth transition for opacity property */
+}
+
+
+
+.user-details img {
+  border-radius: 50%;
 }

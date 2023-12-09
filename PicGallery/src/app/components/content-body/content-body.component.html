@@ -1,6 +1,11 @@
 <app-search-bar (searchTextChange)="onSearched($event)"></app-search-bar>
 <div class="body-content">
-  <div class="images-div" *ngFor="let images of imagesData">
-    <img class="images" width="250vh" height="300vh" [src]="images.urls.regular">
+  <div class="images-div" *ngFor="let image of imagesData">
+    <div class="image-container" (mouseenter)="showDetails(image)" (mouseleave)="hideDetails()" >
+      <img class="images" width="250vh" height="300vh" [src]="image.urls.regular">
+      <div class="user-details" *ngIf="image.showDetails">
+        <img [src]="image.user.profile_image.medium" alt="">
+      </div>
+    </div>
   </div>
 </div>

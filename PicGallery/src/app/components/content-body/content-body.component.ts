@@ -32,4 +32,12 @@ export class ContentBodyComponent implements OnInit {
   }
 
   // when hover on card this things going to happen
+  showDetails(image: any): void {
+    image.showDetails = true;
+  }
+
+  hideDetails(): void {
+    this.imagesData.forEach((image: { showDetails: boolean; }) => (image.showDetails = false));
+  }
+  
 }

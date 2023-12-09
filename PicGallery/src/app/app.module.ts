@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContentBodyComponent } from './components/content-body/content-body.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContentBodyComponent } from './components/content-body/content-body.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

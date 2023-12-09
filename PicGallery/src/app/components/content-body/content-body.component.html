@@ -4,7 +4,8 @@
     <div class="image-container" (mouseenter)="showDetails(image)" (mouseleave)="hideDetails()" >
       <img class="images" width="250vh" height="300vh" [src]="image.urls.regular">
       <div class="user-details" *ngIf="image.showDetails">
-        <img [src]="image.user.profile_image.medium" alt="">
+        <img [src]="image.user.profile_image.small" alt="">
+        <h3>{{image.user.name}}</h3>
       </div>
     </div>
   </div>

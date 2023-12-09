@@ -11,9 +11,15 @@
 .user-details{
   position: relative;
   height: 20px;
-  bottom: 80px;
+  bottom: 70px;
   left: 10px;
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 10px;
 }
+
 
 /* ----------------------------- */
 
@@ -30,8 +36,6 @@
 .user-details {
   transition: opacity 0.4s ease; /* Smooth transition for opacity property */
 }
-
-
 
 .user-details img {
   border-radius: 50%;

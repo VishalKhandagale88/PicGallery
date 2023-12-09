@@ -9,6 +9,5 @@ export class ContentBodyComponent {
   searchedText:string="";
   onSearched(searchValue:string){
     this.searchedText = searchValue;
-    console.log("In parent component content body");
   }
 }

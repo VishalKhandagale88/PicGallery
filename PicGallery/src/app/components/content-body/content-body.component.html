@@ -1,1 +1,4 @@
-<p>content-body works!</p>
+<app-search-bar (searchTextChange)="onSearched($event)"></app-search-bar>
+<div class="body-content">
+  <h1>{{searchedText}}</h1>
+</div>

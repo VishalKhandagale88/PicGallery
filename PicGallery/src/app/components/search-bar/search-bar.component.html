@@ -1,6 +1,7 @@
 <div class="search-bar">
-  <form  action="">
-    <input [(ngModel)]="searchedText" type="text" placeholder="seach images here">
-    <button onclick="searchValue()">search</button>
-  </form>
+  <div class="form">
+    <input [(ngModel)]="searchedText" name="searchtext" type="text" placeholder="seach images here">
+    <button (click)="onSearchClicked()">search</button>
+  </div>
+
 </div>

@@ -8,8 +8,10 @@ export class PictureService {
 
   constructor(private httpClient:HttpClient) {
    }
+   baseUrl:string=`https://api.unsplash.com/photos/random?client_id=${environment.client_id}`
 
-   getAlliamges(){
-    return this.httpClient.get(`https://api.unsplash.com/photos/random?client_id=${environment.client_id}`)
+   getSearchedImages(searched:string){
+    return this.httpClient.get(this.baseUrl+`&query=${searched}`);
    }
+
 }

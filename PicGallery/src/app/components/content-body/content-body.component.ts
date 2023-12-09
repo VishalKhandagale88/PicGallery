@@ -13,10 +13,12 @@ export class ContentBodyComponent {
   searchedText:string="";
   onSearched(searchValue:string){
     this.searchedText = searchValue;
+    this.getAllImages();
   }
 
+
   getAllImages(){
-    this.pictureService.getAlliamges().subscribe(data=>{
+    this.pictureService.getSearchedImages(this.searchedText).subscribe(data=>{
       console.log(data);
     });
   }

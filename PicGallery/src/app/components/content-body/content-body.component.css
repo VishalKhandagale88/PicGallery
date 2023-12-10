@@ -41,3 +41,13 @@
   border-radius: 50%;
 }
 
+/* Image not found css  */
+.image-not-found {
+  text-align: center;
+  padding: 20px;
+}
+
+.image-not-found img {
+  max-width: 100%;
+  height: auto; 
+}

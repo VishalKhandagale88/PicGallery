@@ -18,6 +18,7 @@ export class ContentBodyComponent implements OnInit {
   }
   searchedText:string="";
   imagesData:any;
+  numberOfImages:number | undefined;
   onSearched(searchValue:string){
     this.searchedText = searchValue;
     this.searchedImages();
@@ -29,6 +30,7 @@ export class ContentBodyComponent implements OnInit {
     this.pictureService.getSearchedImages(this.searchedText).subscribe(data=>{
       this.searchResponse=data;
       this.imagesData=this.searchResponse.results
+      this.numberOfImages = this.imagesData.length;
     });
   }
 

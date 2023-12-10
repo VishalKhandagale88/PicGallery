@@ -11,16 +11,20 @@
 .user-details{
   position: relative;
   height: 20px;
-  bottom: 70px;
+  bottom: 140px;
   left: 10px;
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   color: white;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 10px;
 }
-
-
+.image-data{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+}
+.description{
+  overflow: hidden;
+}
 /* ----------------------------- */
 
 .image-container {
@@ -38,11 +42,13 @@
 }
 
 .user-details img {
-  border-radius: 50%;
+  border-radius: 60%;
+  height: auto;
 }
 /* download button */
 .download-button{
   border: none;
+  display: flex;
 }
 /* Image not found css  */
 .image-not-found {

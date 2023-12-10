@@ -4,14 +4,19 @@
     <div class="image-container" (mouseenter)="showDetails(image)" (mouseleave)="hideDetails()">
       <img class="images" width="250vh" height="300vh" [src]="image.urls.regular">
       <div class="user-details" *ngIf="image.showDetails">
-        <img [src]="image.user.profile_image.small" alt="">
-        <h3>{{image.user.name}}</h3>
-        <button>
-          <a [href]="image.urls.full" target="_blank">
-            <img class="download-button" width="20" height="20" src="https://img.icons8.com/windows/32/download--v1.png"
-              alt="download--v1" />
-          </a>
-        </button>
+        <div class="description-div">
+          <p class="description">{{image.alt_description}}</p>
+        </div>
+        <div class="image-data">
+          <img [src]="image.user.profile_image.small" alt="">
+          <h3>{{image.user.name}}</h3>
+          <button>
+            <a [href]="image.urls.full" target="_blank">
+              <img width="20" height="20" src="https://img.icons8.com/windows/32/download--v1.png"
+                alt="download--v1" />
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   </div>

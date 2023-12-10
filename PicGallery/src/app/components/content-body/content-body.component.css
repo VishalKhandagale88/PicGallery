@@ -55,10 +55,26 @@
   text-align: center;
   padding: 20px;
 }
+.load-more-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin : 10px ;
+}
+.load-more-button{
+  border-radius: 5px;
+  height: 30px;
+  border: none;
+  width: 100%;
+  max-width: 90px;
+  background-color: #4d9dff;
+  cursor: pointer;
+}
 
 .image-not-found img {
   max-width: 100%;
   height: auto;
 }
+
 
 

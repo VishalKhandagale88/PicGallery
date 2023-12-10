@@ -9,17 +9,22 @@ import { PictureService } from 'src/app/service/picture.service';
 })
 export class ContentBodyComponent implements OnInit {
   constructor(private pictureService:PictureService ){
-
   }
+  imageArray: any;
+  // image array where all the images are stored
+  imagesData:any[]=[];
+  
   imagesCount=30;
   ngOnInit(): void {
     this.pictureService.getAllIameges(this.imagesCount).subscribe(data=>{
-      this.imagesData = data;
       console.log(data);
+      this.imageArray=data
+      this.imagesData.push(...this.imageArray);
     });
+    console.log(this.imagesData);
   }
   searchedText:string="";
-  imagesData:any;
+
   numberOfImages:number | undefined;
   onSearched(searchValue:string){
     this.searchedText = searchValue;

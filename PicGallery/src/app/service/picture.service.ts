@@ -15,9 +15,10 @@ export class PictureService {
     return this.httpClient.get(this.baseUrl+`/search/photos?query=${searched}&per_page=30&client_id=${environment.client_id}`);
    }
    // this method will featch 30 images
-   getAllIameges(countOfImages:number){
+   getAllIameges(countOfImages:number,pageCount:number){
+    console.log("In service  class");
     console.log(countOfImages);
-    return this.httpClient.get(`${this.allImagesUrl}/photos?per_page=${countOfImages}&client_id=${environment.client_id}`);
+    return this.httpClient.get(`${this.allImagesUrl}/photos?page=${pageCount}&per_page=${countOfImages}&client_id=${environment.client_id}`);
    }
 
 }

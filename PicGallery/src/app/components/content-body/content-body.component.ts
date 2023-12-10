@@ -13,10 +13,10 @@ export class ContentBodyComponent implements OnInit {
   imageArray: any;
   // image array where all the images are stored
   imagesData:any[]=[];
-  
+
   imagesCount=30;
   ngOnInit(): void {
-    this.pictureService.getAllIameges(this.imagesCount).subscribe(data=>{
+    this.pictureService.getAllIameges(30,this.imagesCount).subscribe(data=>{
       console.log(data);
       this.imageArray=data
       this.imagesData.push(...this.imageArray);
@@ -50,7 +50,17 @@ export class ContentBodyComponent implements OnInit {
     this.imagesData.forEach((image: { showDetails: boolean; }) => (image.showDetails = false));
   }
 
-
-
+  // method to load more images
+  currentPage = 1;
+  perPage = 30; // Adjust as needed
+  onScroll(): void {
+    // Assuming you have a method to detect scrolling and trigger this event
+    this.currentPage++;
+    this.pictureService.getAllIameges(this.perPage,this.currentPage).subscribe(data=>{
+      console.log(data);
+      this.imageArray=data;
+      this.imagesData.push(...this.imageArray);
+    });
+  }
 
 }

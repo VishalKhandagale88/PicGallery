@@ -11,7 +11,7 @@
 .user-details{
   position: relative;
   height: 20px;
-  bottom: 140px;
+  bottom: 110px;
   left: 10px;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -42,7 +42,7 @@
 }
 
 .user-details img {
-  border-radius: 60%;
+  border-radius: 50%;
   height: auto;
 }
 /* download button */

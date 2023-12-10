@@ -17,17 +17,18 @@ export class ContentBodyComponent implements OnInit {
     });
   }
   searchedText:string="";
-  imagesData:any
+  imagesData:any;
   onSearched(searchValue:string){
     this.searchedText = searchValue;
-    console.log("In on seach method");
-
+    this.searchedImages();
   }
+  //storing search respone here
+  searchResponse:any;
 
-
-  getAllImages(){
+  searchedImages(){
     this.pictureService.getSearchedImages(this.searchedText).subscribe(data=>{
-      console.log(data);
+      this.searchResponse=data;
+      this.imagesData=this.searchResponse.results
     });
   }
 
@@ -39,5 +40,5 @@ export class ContentBodyComponent implements OnInit {
   hideDetails(): void {
     this.imagesData.forEach((image: { showDetails: boolean; }) => (image.showDetails = false));
   }
-  
+
 }

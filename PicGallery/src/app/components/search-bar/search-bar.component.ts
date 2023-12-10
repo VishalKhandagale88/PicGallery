@@ -10,15 +10,20 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  constructor(){
+  constructor() {
   }
-  searchedText:string="";
+  searchedText: string = "";
 
   @Output()
-  searchTextChange:EventEmitter<string> = new EventEmitter<string>;
+  searchTextChange: EventEmitter<string> = new EventEmitter<string>;
 
-  onSearchClicked(){
-    this.searchTextChange.emit(this.searchedText);
+  onSearchClicked() {
+    if (this.searchedText.trim() === "") {
+      alert("please seach for a image")
+    } else {
+      this.searchTextChange.emit(this.searchedText);
+
+    }
   }
 
 }

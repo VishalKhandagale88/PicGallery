@@ -1,7 +1,7 @@
 <app-search-bar (searchTextChange)="onSearched($event)"></app-search-bar>
 <div class="body-content">
   <div class="images-div" *ngFor="let image of imagesData">
-    <div class="image-container" (mouseenter)="showDetails(image)" (mouseleave)="hideDetails()" >
+    <div class="image-container" (mouseenter)="showDetails(image)" (mouseleave)="hideDetails()">
       <img class="images" width="250vh" height="300vh" [src]="image.urls.regular">
       <div class="user-details" *ngIf="image.showDetails">
         <img [src]="image.user.profile_image.small" alt="">
@@ -10,6 +10,10 @@
     </div>
   </div>
 </div>
+<div class="load-more-div">
+  <button class="load-more">Load more</button>
+</div>
+
 <div class="image-not-found" *ngIf="numberOfImages==0">
   <img src="../../../assets/Image_not_available.png" alt="">
 </div>

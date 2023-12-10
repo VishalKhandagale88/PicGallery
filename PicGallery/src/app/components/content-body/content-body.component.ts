@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { count } from 'rxjs';
 import { PictureService } from 'src/app/service/picture.service';
 
 @Component({
@@ -10,8 +11,9 @@ export class ContentBodyComponent implements OnInit {
   constructor(private pictureService:PictureService ){
 
   }
+  imagesCount=30;
   ngOnInit(): void {
-    this.pictureService.getAllIameges().subscribe(data=>{
+    this.pictureService.getAllIameges(this.imagesCount).subscribe(data=>{
       this.imagesData = data;
       console.log(data);
     });
@@ -42,5 +44,8 @@ export class ContentBodyComponent implements OnInit {
   hideDetails(): void {
     this.imagesData.forEach((image: { showDetails: boolean; }) => (image.showDetails = false));
   }
+
+
+
 
 }

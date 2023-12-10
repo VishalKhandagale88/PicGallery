@@ -6,13 +6,17 @@
       <div class="user-details" *ngIf="image.showDetails">
         <img [src]="image.user.profile_image.small" alt="">
         <h3>{{image.user.name}}</h3>
+        <button>
+          <a [href]="image.urls.full" target="_blank">
+            <img class="download-button" width="20" height="20" src="https://img.icons8.com/windows/32/download--v1.png"
+              alt="download--v1" />
+          </a>
+        </button>
       </div>
     </div>
   </div>
 </div>
-<div class="load-more-div">
-  <button class="load-more">Load more</button>
-</div>
+
 
 <div class="image-not-found" *ngIf="numberOfImages==0">
   <img src="../../../assets/Image_not_available.png" alt="">

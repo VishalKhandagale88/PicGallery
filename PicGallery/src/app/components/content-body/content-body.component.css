@@ -3,6 +3,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minmax values as needed */
   grid-gap: 20px;
+  /* font-family: 'Dancing Script', cursive; */
+font-family: 'Kalam', cursive;
 }
 
 .images{
@@ -78,3 +80,14 @@
 
 
 
+
+.credits{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.developer-name{
+  font-family: 'Dancing Script', cursive;;
+}

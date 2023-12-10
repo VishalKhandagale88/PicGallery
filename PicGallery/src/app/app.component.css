@@ -3,3 +3,8 @@
   margin: 30px;
   padding: 10px;
 }
+.title{
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+}

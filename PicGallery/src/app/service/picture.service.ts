@@ -11,8 +11,8 @@ export class PictureService {
    baseUrl:string=`https://api.unsplash.com/`
    allImagesUrl :string =  `http://api.unsplash.com/`
 
-   getSearchedImages(searched:string){
-    return this.httpClient.get(this.baseUrl+`/search/photos?query=${searched}&per_page=30&client_id=${environment.client_id}`);
+   getSearchedImages(searched:string,pageCount:number){
+    return this.httpClient.get(this.baseUrl+`/search/photos?page=${pageCount}&query=${searched}&per_page=30&client_id=${environment.client_id}`);
    }
    // this method will featch 30 images
    getAllIameges(countOfImages:number,pageCount:number){

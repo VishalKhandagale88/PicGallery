@@ -21,7 +21,7 @@
     </div>
   </div>
 </div>
-<div class="load-more-div" (click)="onScroll()">
+<div class="load-more-div" (click)="onScroll()" *ngIf="numberOfImages!==0">
   <button class="load-more-button">
     Load more
   </button>

@@ -17,11 +17,9 @@ export class ContentBodyComponent implements OnInit {
   imagesCount=30;
   ngOnInit(): void {
     this.pictureService.getAllIameges(30,this.imagesCount).subscribe(data=>{
-      console.log(data);
       this.imageArray=data
       this.imagesData.push(...this.imageArray);
     });
-    console.log(this.imagesData);
   }
   searchedText:string="";
 
@@ -34,7 +32,7 @@ export class ContentBodyComponent implements OnInit {
   searchResponse:any;
 
   searchedImages(){
-    this.pictureService.getSearchedImages(this.searchedText).subscribe(data=>{
+    this.pictureService.getSearchedImages(this.searchedText,1).subscribe(data=>{
       this.searchResponse=data;
       this.imagesData=this.searchResponse.results
       this.numberOfImages = this.imagesData.length;
@@ -57,9 +55,20 @@ export class ContentBodyComponent implements OnInit {
     // Assuming you have a method to detect scrolling and trigger this event
     this.currentPage++;
     this.pictureService.getAllIameges(this.perPage,this.currentPage).subscribe(data=>{
-      console.log(data);
-      this.imageArray=data;
-      this.imagesData.push(...this.imageArray);
+      if(this.searchedText===""){
+        this.imageArray=data;
+        this.imagesData.push(...this.imageArray);
+      }else{
+        this.pictureService.getSearchedImages(this.searchedText,this.currentPage).subscribe(data=>{
+          this.searchResponse=data;
+          // this.imagesData=this.searchResponse.results
+          // this.numberOfImages = this.imagesData.length;
+          console.log(this.imagesData);
+          console.log("seach response");
+          this.imagesData.push(...this.searchResponse.results)
+          console.log(this.imagesData);
+        });
+      }
     });
   }
 
